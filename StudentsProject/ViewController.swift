@@ -37,9 +37,7 @@ class ViewController: UIViewController {
     
     func saveStudent(){
         do {
-            try viewModel.validateStudent(age: ageTxtField.text  ?? "",
-                                        id: IdTxtField.text ?? "",
-                                       sch: schTxtField.text ?? "")
+            try viewModel.validateStudent(age: ageTxtField.text  ?? "", id: IdTxtField.text ?? "", sch: schTxtField.text ?? "")
             errorLbl.alpha = 0
             print("Success! Yum.")
         } catch ValidateType.emptyFields {
