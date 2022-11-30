@@ -17,3 +17,9 @@ struct Details {
     var age: String
     var school: String
 }
+struct TextsInUse {
+    public static let Empty = ""
+    public static let EmptyFields = "*Complete all fields"
+    public static let NotNumber = "*Id and age should be numbers"
+    public static let NotSaved = "*Could not save"
+}

@@ -37,18 +37,20 @@ class ViewController: UIViewController {
     
     func saveStudent(){
         do {
-            try viewModel.validateStudent(age: ageTxtField.text  ?? "", id: IdTxtField.text ?? "", sch: schTxtField.text ?? "")
+            try viewModel.validateStudent(age: ageTxtField.text  ?? "",
+                                        id: IdTxtField.text ?? "",
+                                       sch: schTxtField.text ?? "")
             errorLbl.alpha = 0
             print("Success! Yum.")
         } catch ValidateType.emptyFields {
             errorLbl.alpha = 1
-            errorLbl.text = "*Complete all fields"
+            errorLbl.text = TextsInUse.EmptyFields
         } catch ValidateType.notNumber {
             errorLbl.alpha = 1
-            errorLbl.text = "*Id and age should be numbers"
+            errorLbl.text = TextsInUse.NotNumber
         } catch ValidateType.notSaved {
             errorLbl.alpha = 1
-            errorLbl.text = "*Could not save"
+            errorLbl.text = TextsInUse.Empty
         } catch {
             print("Unexpected error: \(error).")
         }
